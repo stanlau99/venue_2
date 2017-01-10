@@ -1,6 +1,10 @@
 class Dish < ApplicationRecord
   # Direct associations
 
+  has_many   :bookmarks,
+             :foreign_key => "dishid",
+             :dependent => :destroy
+
   has_one    :dish,
              :class_name => "Dishesbyvenue",
              :foreign_key => "dishid",
