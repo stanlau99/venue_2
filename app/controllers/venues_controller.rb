@@ -6,6 +6,8 @@ class VenuesController < ApplicationController
   end
 
   def show
+    @bookmark = Bookmark.new
+    @dishesbyvenue = Dishesbyvenue.new
     @venue = Venue.find(params[:id])
 
     render("venues/show.html.erb")
