@@ -9,10 +9,22 @@
       <dd><%= @bookmark.userid %></dd>
 
       <dt>Dishid</dt>
-      <dd><%= @bookmark.dishid %></dd>
+      <dd>
+        <% if @bookmark.dish.present? %>
+          <a href="/dishes/<%= @bookmark.dishid %>">
+            <%= @bookmark.dish.id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Venueid</dt>
-      <dd><%= @bookmark.venueid %></dd>
+      <dd>
+        <% if @bookmark.venue.present? %>
+          <a href="/venues/<%= @bookmark.venueid %>">
+            <%= @bookmark.venue.id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
