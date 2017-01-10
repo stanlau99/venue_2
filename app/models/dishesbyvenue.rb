@@ -5,4 +5,6 @@ class Dishesbyvenue < ApplicationRecord
 
   # Validations
 
+  validates :venueid, :presence => true
+
 end
