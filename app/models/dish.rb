@@ -1,6 +1,11 @@
 class Dish < ApplicationRecord
   # Direct associations
 
+  has_one    :dish,
+             :class_name => "Dishesbyvenue",
+             :foreign_key => "dishid",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
