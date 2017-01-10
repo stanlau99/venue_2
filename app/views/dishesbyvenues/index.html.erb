@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Dishesbyvenues
+    <a href="/dishesbyvenues/new" class="btn btn-lg btn-success">New Dishesbyvenue</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Venueid</th>
+        <th>Dishid</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @dishesbyvenues.each do |dishesbyvenue| %>
+      <tr>
+        <td><%= dishesbyvenue.venueid %></td>
+        <td><%= dishesbyvenue.dishid %></td>
+        <td>
+          <a href="/dishesbyvenues/<%= dishesbyvenue.id %>" class="btn btn-primary">Show</a>
+          <a href="/dishesbyvenues/<%= dishesbyvenue.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_dishesbyvenue/<%= dishesbyvenue.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
