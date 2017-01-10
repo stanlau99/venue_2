@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @bookmark.errors.any? %>
+  <% @bookmark.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Bookmark</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_bookmark" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for userid -->
+      <div class="form-group">
+        <label for="userid" class="control-label">
+          Userid
+        </label>
+
+        <input type="text" id="userid" name="userid" placeholder="Userid" class="form-control" value="<%= @bookmark.userid %>">
+      </div>
+
+      <!-- Label and input for dishid -->
+      <div class="form-group">
+        <label for="dishid" class="control-label">
+          Dishid
+        </label>
+
+        <input type="text" id="dishid" name="dishid" placeholder="Dishid" class="form-control" value="<%= @bookmark.dishid %>">
+      </div>
+
+      <!-- Label and input for venueid -->
+      <div class="form-group">
+        <label for="venueid" class="control-label">
+          Venueid
+        </label>
+
+        <input type="text" id="venueid" name="venueid" placeholder="Venueid" class="form-control" value="<%= @bookmark.venueid %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Bookmark
+      </button>
+      or
+      <a href="/bookmarks">Cancel</a>
+    </form>
+  </div>
+</div>
