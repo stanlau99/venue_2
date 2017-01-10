@@ -42,7 +42,7 @@
           Venueid
         </label>
 
-        <input type="text" id="venueid" name="venueid" placeholder="Venueid" class="form-control" value="<%= @bookmark.venueid %>">
+        <%= select_tag(:venueid, options_from_collection_for_select(Venue.all, :id, :id, @bookmark.venueid), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
