@@ -39,19 +39,19 @@
         Dishes
       </li>
 
-      <% @venue.dishes.each do |dishesbyvenue| %>
+      <% @venue.dishes.each do |venuedish| %>
         <li class="list-group-item">
-          <a href="/dishesbyvenues/<%= dishesbyvenue.id %>">
-            <%= dishesbyvenue.venueid %>
+          <a href="/venuedishes/<%= venuedish.id %>">
+            <%= venuedish.venueid %>
           </a>
           <div class="btn-group btn-group-xs pull-right">
-            <a href="/dishesbyvenues/<%= dishesbyvenue.id %>" class="btn btn-primary">
+            <a href="/venuedishes/<%= venuedish.id %>" class="btn btn-primary">
               <i class="fa fa-search-plus"></i>
             </a>
-            <a href="/dishesbyvenues/<%= dishesbyvenue.id %>/edit" class="btn btn-warning">
+            <a href="/venuedishes/<%= venuedish.id %>/edit" class="btn btn-warning">
               <i class="fa fa-edit"></i>
             </a>
-            <a href="/delete_dishesbyvenue/<%= dishesbyvenue.id %>" class="btn btn-danger" rel="nofollow">
+            <a href="/delete_venuedish/<%= venuedish.id %>" class="btn btn-danger" rel="nofollow">
               <i class="fa fa-trash-o"></i>
             </a>
           </div>
@@ -59,7 +59,7 @@
       <% end %>
 
       <li class="list-group-item">
-        <form action="/create_dishesbyvenue" method="post">
+        <form action="/create_venuedish" method="post">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
@@ -69,7 +69,7 @@
           Venueid
         </label>
 
-        <%= select_tag(:venueid, options_from_collection_for_select(Venue.all, :id, :id, @dishesbyvenue.venueid), :class => "form-control") %>
+        <%= select_tag(:venueid, options_from_collection_for_select(Venue.all, :id, :id, @venuedish.venueid), :class => "form-control") %>
       </div>
 
       <!-- Label and input for dishid -->
@@ -78,11 +78,11 @@
           Dishid
         </label>
 
-        <%= select_tag(:dishid, options_from_collection_for_select(Dish.all, :id, :id, @dishesbyvenue.dishid), :class => "form-control") %>
+        <%= select_tag(:dishid, options_from_collection_for_select(Dish.all, :id, :id, @venuedish.dishid), :class => "form-control") %>
       </div>
 
       <button class="btn btn-block btn-success">
-        Create Dishesbyvenue
+        Create Venuedish
       </button>
     </form>
       </li>

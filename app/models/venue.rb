@@ -6,7 +6,7 @@ class Venue < ApplicationRecord
              :dependent => :destroy
 
   has_many   :dishes,
-             :class_name => "Dishesbyvenue",
+             :class_name => "Venuedish",
              :foreign_key => "venueid",
              :dependent => :destroy
 

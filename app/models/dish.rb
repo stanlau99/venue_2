@@ -6,7 +6,7 @@ class Dish < ApplicationRecord
              :dependent => :destroy
 
   has_one    :dish,
-             :class_name => "Dishesbyvenue",
+             :class_name => "Venuedish",
              :foreign_key => "dishid",
              :dependent => :destroy
 

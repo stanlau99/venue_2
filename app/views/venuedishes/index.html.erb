@@ -1,11 +1,11 @@
 <div class="page-header">
   <h1>
-    Dishesbyvenues
-    <a href="/dishesbyvenues/new" class="btn btn-lg btn-success">New Dishesbyvenue</a>
+    Venuedishes
+    <a href="/venuedishes/new" class="btn btn-lg btn-success">New Venuedish</a>
   </h1>
 </div><div class="row mb-1">
   <div class="col-md-12">
-    <%= search_form_for @q, :class => collapse_search_form, :id => "dishesbyvenues_filters" do |f| %>
+    <%= search_form_for @q, :class => collapse_search_form, :id => "venuedishes_filters" do |f| %>
       <p class="lead">Narrow results:</p>
 
         <div class="form-group">
@@ -52,9 +52,9 @@
 
       <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
 
-      <a href="/dishesbyvenues" class="btn btn-default btn-block mb-1">Clear filters</a>
+      <a href="/venuedishes" class="btn btn-default btn-block mb-1">Clear filters</a>
     <% end %>
-    <a class="btn btn-default btn-block mb-1" data-toggle="collapse" href="#dishesbyvenues_filters">
+    <a class="btn btn-default btn-block mb-1" data-toggle="collapse" href="#venuedishes_filters">
       Show Filters
     </a>
   </div>
@@ -69,30 +69,30 @@
         <th>Actions</th>
       </tr>
 
-      <% @dishesbyvenues.each do |dishesbyvenue| %>
+      <% @venuedishes.each do |venuedish| %>
       <tr>
         <td>
-          <% if dishesbyvenue.venue.present? %>
-            <a href="/venues/<%= dishesbyvenue.venue.id %>">
-              <%= dishesbyvenue.venue.id %>
+          <% if venuedish.venue.present? %>
+            <a href="/venues/<%= venuedish.venue.id %>">
+              <%= venuedish.venue.id %>
             </a>
           <% end %>
         </td>
         <td>
-          <% if dishesbyvenue.dish.present? %>
-            <a href="/dishes/<%= dishesbyvenue.dish.id %>">
-              <%= dishesbyvenue.dish.id %>
+          <% if venuedish.dish.present? %>
+            <a href="/dishes/<%= venuedish.dish.id %>">
+              <%= venuedish.dish.id %>
             </a>
           <% end %>
         </td>
         <td>
-          <a href="/dishesbyvenues/<%= dishesbyvenue.id %>" class="btn btn-primary">Show</a>
-          <a href="/dishesbyvenues/<%= dishesbyvenue.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_dishesbyvenue/<%= dishesbyvenue.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/venuedishes/<%= venuedish.id %>" class="btn btn-primary">Show</a>
+          <a href="/venuedishes/<%= venuedish.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_venuedish/<%= venuedish.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
         </td>
       </tr>
       <% end %>
     </table>
-    <%= paginate @dishesbyvenues, theme: 'twitter-bootstrap-4' %>
+    <%= paginate @venuedishes, theme: 'twitter-bootstrap-4' %>
   </div>
 </div>
