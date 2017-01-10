@@ -1,6 +1,11 @@
 class Venue < ApplicationRecord
   # Direct associations
 
+  has_many   :dishes,
+             :class_name => "Dishesbyvenue",
+             :foreign_key => "venueid",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
