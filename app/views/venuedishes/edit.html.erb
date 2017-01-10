@@ -1,6 +1,6 @@
 <!-- Validation failure messages -->
-<% if @dishesbyvenue.errors.any? %>
-  <% @dishesbyvenue.errors.full_messages.each do |message| %>
+<% if @venuedish.errors.any? %>
+  <% @venuedish.errors.full_messages.each do |message| %>
     <div class="alert alert-dismissable alert-danger">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <%= message %>
@@ -9,12 +9,12 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Edit Dishesbyvenue #<%= @dishesbyvenue.id %></h3>
+  <h3>Edit Venuedish #<%= @venuedish.id %></h3>
 </div>
 
 <div class="row">
   <div class="col-md-12">
-    <form action="/update_dishesbyvenue/<%= @dishesbyvenue.id %>" method="post">
+    <form action="/update_venuedish/<%= @venuedish.id %>" method="post">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
@@ -24,7 +24,7 @@
           Venueid
         </label>
 
-        <%= select_tag(:venueid, options_from_collection_for_select(Venue.all, :id, :id, @dishesbyvenue.venueid), :class => "form-control") %>
+        <%= select_tag(:venueid, options_from_collection_for_select(Venue.all, :id, :id, @venuedish.venueid), :class => "form-control") %>
       </div>
 
       <!-- Label and input for dishid -->
@@ -33,14 +33,14 @@
           Dishid
         </label>
 
-        <%= select_tag(:dishid, options_from_collection_for_select(Dish.all, :id, :id, @dishesbyvenue.dishid), :class => "form-control") %>
+        <%= select_tag(:dishid, options_from_collection_for_select(Dish.all, :id, :id, @venuedish.dishid), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
-        Update Dishesbyvenue
+        Update Venuedish
       </button>
       or
-      <a href="/dishesbyvenues/<%= @dishesbyvenue.id %>">Cancel</a>
+      <a href="/venuedishes/<%= @venuedish.id %>">Cancel</a>
     </form>
   </div>
 </div>

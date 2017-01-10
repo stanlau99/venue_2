@@ -1,4 +1,4 @@
-ActiveAdmin.register Dishesbyvenue do
+ActiveAdmin.register Venuedish do
 
  permit_params :venueid, :dishid
 

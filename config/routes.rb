@@ -36,21 +36,21 @@ Rails.application.routes.draw do
   get "/delete_venue/:id", :controller => "venues", :action => "destroy"
   #------------------------------
 
-  # Routes for the Dishesbyvenue resource:
+  # Routes for the Venuedish resource:
   # CREATE
-  get "/dishesbyvenues/new", :controller => "dishesbyvenues", :action => "new"
-  post "/create_dishesbyvenue", :controller => "dishesbyvenues", :action => "create"
+  get "/venuedishes/new", :controller => "venuedishes", :action => "new"
+  post "/create_venuedish", :controller => "venuedishes", :action => "create"
 
   # READ
-  get "/dishesbyvenues", :controller => "dishesbyvenues", :action => "index"
-  get "/dishesbyvenues/:id", :controller => "dishesbyvenues", :action => "show"
+  get "/venuedishes", :controller => "venuedishes", :action => "index"
+  get "/venuedishes/:id", :controller => "venuedishes", :action => "show"
 
   # UPDATE
-  get "/dishesbyvenues/:id/edit", :controller => "dishesbyvenues", :action => "edit"
-  post "/update_dishesbyvenue/:id", :controller => "dishesbyvenues", :action => "update"
+  get "/venuedishes/:id/edit", :controller => "venuedishes", :action => "edit"
+  post "/update_venuedish/:id", :controller => "venuedishes", :action => "update"
 
   # DELETE
-  get "/delete_dishesbyvenue/:id", :controller => "dishesbyvenues", :action => "destroy"
+  get "/delete_venuedish/:id", :controller => "venuedishes", :action => "destroy"
   #------------------------------
 
   # Routes for the Dish resource:

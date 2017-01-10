@@ -1,6 +1,6 @@
-class CreateDishesbyvenues < ActiveRecord::Migration
+class CreateVenuedishes < ActiveRecord::Migration
   def change
-    create_table :dishesbyvenues do |t|
+    create_table :venuedishes do |t|
       t.integer :venueid
       t.integer :dishid
 

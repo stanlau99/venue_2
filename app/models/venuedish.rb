@@ -1,4 +1,4 @@
-class Dishesbyvenue < ApplicationRecord
+class Venuedish < ApplicationRecord
   # Direct associations
 
   belongs_to :venue,
